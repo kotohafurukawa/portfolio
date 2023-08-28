@@ -1,0 +1,17 @@
+@use '/src/scss/global/' as *;
+
+.c-HeadingLV1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: $fontWhite;
+  text-transform: capitalize;
+  text-align: center;
+
+  @include mq(md) {
+    font-size: 40px;
+  }
+
+  @include mq(lg) {
+    font-size: 48px;
+  }
+}

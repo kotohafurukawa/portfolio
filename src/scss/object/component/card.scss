@@ -1,31 +1,43 @@
 @use "/src/scss/global/" as *;
-// ボーダーの外側と内側の差分px;
-$card-radius-padding: 10px;
-// 内側のborder-radiusの値
+// カード外側のpadding値;
+$card-outer-padding: 10px;
+// カード内側のpadding値
+$card-inner-padding: 20px;
+// 内側のborder-radius値
 $card-radius-inner-size: 10px;
 
-
 .c-card {
+  position: relative;
   width: 240px;
   height: 320px;
-  padding: $card-radius-padding;
-  border-radius: calc($card-radius-padding + $card-radius-inner-size);
-  background-image: url(https://kumamoto.guide/files/9d008a78-009b-498b-99ee-056bd4ccbe09_l.jpg?1571185638);
+  padding: $card-outer-padding;
+  border-radius: calc($card-outer-padding + $card-radius-inner-size);
   box-shadow: 0px 8px 54px 24px rgba(0, 0, 0, 0.32);;
   opacity: 0.7;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -10;
+  }
 
   &__inner {
-    position: relative;
     height: 100%;
-    padding: 20px;
+    padding: $card-inner-padding;
     border-radius: $card-radius-inner-size;
     border: 1px solid $borderColorWhite;
   }
 
   &__txt {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: calc($card-outer-padding + $card-inner-padding);
+    left: calc($card-outer-padding + $card-inner-padding);
   }
 
   &__title {
@@ -39,4 +51,5 @@ $card-radius-inner-size: 10px;
   &__description {
     margin: 0;
   }
+
 }

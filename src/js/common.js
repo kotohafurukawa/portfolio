@@ -1,19 +1,13 @@
 import '@/scss/style.scss';
-// import fn from "./index.js";
-let greeting = () => {
-  console.log('hello world');
-}
-greeting();
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
 
-  fn() {
-    console.log(`私の名前は${this.name}で、${this.age}歳です。`);
-  }
-}
+const card = document.querySelector('#js-card');
+card.addEventListener("mousemove" , (event) => {
+  const rect = card.getBoundingClientRect();
+  console.log(rect);
+  const rectCenterX = rect.left + rect.width / 2;
+  const rectCenterY = rect.top + rect.height / 2;
+  const deltaX = rectCenterX - event.clientX;
+  const deltaY = rectCenterY - event.clientY;
 
-const bob = new Person('bob', 29);
-bob.fn();
+  card.style.transform = `rotateX(${-deltaX * 0.05}deg) rotateY(${deltaY * 0.05}deg)`;
+});

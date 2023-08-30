@@ -14,14 +14,14 @@
 
   // 2カラム
   @include mq(md) {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     margin-left: -32px;
 
     &__item {
       margin-left: 32px;
     }
+    
     &::after {
       display: block;
       content: "";

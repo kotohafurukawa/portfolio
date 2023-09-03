@@ -2,7 +2,7 @@
 
 .c-flex {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
   margin: -32px 0 0;
   padding: 0;

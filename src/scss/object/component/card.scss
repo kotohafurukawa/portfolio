@@ -1,46 +1,51 @@
 @use "/src/scss/global/" as *;
 
-// カード外側のpadding値;
-$card-outer-padding: 10px;
-
-// カード内側のpadding値
-$card-inner-padding: 20px;
-
-// 内側のborder-radius値
-$card-radius-inner-size: 10px;
+// transition設定値
+@mixin card-transition-property(
+  $target: all,
+  $duration: 1s,
+  $timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)) {
+    transition: $target $duration $timing-function;
+  }
 
 .c-card {
-  position: relative;
-  width: 240px;
-  height: 320px;
-  padding: $card-outer-padding;
-  border-radius: calc($card-outer-padding + $card-radius-inner-size);
-  box-shadow: 0 8px 54px 24px rgba(0 0 0 / 32%);
-  opacity: 0.7;
-  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
   cursor: pointer;
 
-  &__img {
+  &__inner {
+    position: relative;
+    width: 240px;
+    height: 320px;
+    background-color: #333;
+    border-radius: 20px;
+    box-shadow:
+      0 30px 60px 0 rgba(0 0 0 / 66%),
+      inset 0 0 0 9px #333,
+      inset 0 0 0 10px rgba(253 253 253 / 60%);
+    overflow: hidden;
+  }
+
+  &__bg {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    object-position: center center;
     object-fit: cover;
-    z-index: -10;
-  }
-
-  &__inner {
-    height: 100%;
-    padding: $card-inner-padding;
-    border-radius: $card-radius-inner-size;
-    border: 1px solid $border-color-white;
+    opacity: 0.5;
   }
 
   &__txt {
     position: absolute;
-    bottom: calc($card-outer-padding + $card-inner-padding);
-    left: calc($card-outer-padding + $card-inner-padding);
+    height: 100%;
+    width: 100%;
+    transform: translateX(12.5%) translateY(70%);
+
+    @include card-transition-property(
+      $duration: 0.7s,
+    );
   }
 
   &__title {
@@ -53,5 +58,24 @@ $card-radius-inner-size: 10px;
 
   &__description {
     margin: 0;
+    opacity: 0;
+
+    @include card-transition-property(
+      $duration: 0.5s
+    );
+  }
+
+  &:hover {
+    .c-card__inner {
+      outline: 1px solid $white;
+    }
+
+    .c-card__txt {
+      transform: translateX(12.5%) translateY(55%);
+    }
+
+    .c-card__description {
+      opacity: 1;
+    }
   }
 }

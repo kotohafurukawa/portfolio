@@ -22,6 +22,11 @@ module.exports = {
       chunks: ["common", "top"]
     }),
     new HtmlWebpackPlugin({
+      template: "./src/about/index.html",
+      filename: "about.html",
+      chunks: ["common", "top"]
+    }),
+    new HtmlWebpackPlugin({
       template: "./src/work/index.html",
       filename: "work.html",
       chunks: ["common", "work"]

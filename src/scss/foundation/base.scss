@@ -1,8 +1,8 @@
 @use "/src/scss/global/" as *;
 
 html {
-  background-color: $green;
-  color: $white;
+  background-color: $bg-color;
+  color: $text-color;
 }
 
 body {

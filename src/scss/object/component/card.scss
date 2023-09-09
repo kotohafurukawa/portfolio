@@ -4,12 +4,15 @@
 @mixin card-transition-property(
   $target: all,
   $duration: 1s,
-  $timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)) {
-    transition: $target $duration $timing-function;
-  }
+  $timing-function: cubic-bezier(0.39, 0.575, 0.565, 1)
+) {
+  transition: $target $duration $timing-function;
+}
 
 .c-card {
-  cursor: pointer;
+  &__link {
+    color: $text-color-white;
+  }
 
   &__inner {
     position: relative;
@@ -40,15 +43,15 @@
       background-image: url("/src/images/index_about.jpg");
     }
 
-    &.c-card__bg--work{
+    &.c-card__bg--work {
       background-image: url("/src/images/index_work.jpg");
     }
 
-    &.c-card__bg--skill{
+    &.c-card__bg--skill {
       background-image: url("/src/images/index_skill.jpg");
     }
 
-    &.c-card__bg--contact{
+    &.c-card__bg--contact {
       background-image: url("/src/images/index_contact.jpg");
     }
   }
@@ -57,11 +60,11 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    transform: translateX(12.5%) translateY(75%);
+    top: 240px;
+    left: 20px;
+    pointer-events: none;
 
-    @include card-transition-property(
-      $duration: 0.5s,
-    );
+    @include card-transition-property($duration: 0.5s);
   }
 
   &__title {
@@ -76,9 +79,7 @@
     margin: 0;
     opacity: 0;
 
-    @include card-transition-property(
-      $duration: 0.3s
-    );
+    @include card-transition-property($duration: 0.3s);
   }
 
   &:hover {
@@ -87,7 +88,7 @@
     }
 
     .c-card__txt {
-      transform: translateX(12.5%) translateY(60%);
+      transform: translateY(-15%);
     }
 
     .c-card__description {

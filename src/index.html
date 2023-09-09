@@ -1,60 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kotoha's Portfolio</title>
-  <meta name="description" content="古川琴葉のポートフォリオサイトです。コーダーとしてWebサイトの制作（HTML5,CSS,JavaScript）をしています。目標はフルスタックエンジニアです。">
-  <meta name="keyword" content="KotohaFurukawa,古川琴葉,Portfolio,作品紹介,HTML5,CSS,JavaScript,Design">
-  <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <script type="module" src="bundle.js"></script>
-  <script type="module" src="bundle.js"></script>
-</head>
-<body>
-  <main class="l-mainContent">
-    <section>
-      <h1 class="c-headingLV1 tiltChange">Kotoha's Portfolio</h1>
-      <ul class="c-flex">
-        <li class="c-flex__item c-card">
-          <div class="c-card__inner">
-            <div class="c-card__bg c-card__bg--about"></div>
-            <div class="c-card__txt">
-              <p class="c-card__title">About</p>
-              <p class="c-card__description">fdsafasdf,fdkasdfjas;df.</p>
-            </div>
-          </div>
-        </li>
-        <li class="c-flex__item c-card js-tilt">
-          <div class="c-card__inner">
-            <div class="c-card__bg c-card__bg--work"></div>
-            <div class="c-card__txt">
-              <p class="c-card__title">Work</p>
-              <p class="c-card__description">fdsafasdf,fdkasdfjas;df.</p>
-            </div>
-          </div>
-        </li>
-        <li class="c-flex__item c-card">
-          <div class="c-card__inner">
-            <div class="c-card__bg c-card__bg--skill"></div>
-            <div class="c-card__txt">
-              <p class="c-card__title">Skill</p>
-              <p class="c-card__description">fdsafasdf,fdkasdfjas;df.</p>
-            </div>
-          </div>
-        </li>
-        <li class="c-flex__item c-card">
-          <div class="c-card__inner">
-            <div class="c-card__bg c-card__bg--contact"></div>
-            <div class="c-card__txt">
-              <p class="c-card__title">Contact</p>
-              <p class="c-card__description">fdsafasdf,fdkasdfjas;df.</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-  </main>
-</body>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kotoha's Portfolio</title>
+    <meta
+      name="description"
+      content="古川琴葉のポートフォリオサイトです。コーダーとしてWebサイトの制作（HTML5,CSS,JavaScript）をしています。目標はフルスタックエンジニアです。"
+    />
+    <meta
+      name="keyword"
+      content="KotohaFurukawa,古川琴葉,Portfolio,作品紹介,HTML5,CSS,JavaScript,Design"
+    />
+    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  </head>
+  <body>
+    <main class="l-mainContent">
+      <section>
+        <h1 class="c-headingLV1">Kotoha's Portfolio</h1>
+        <ul class="c-flex">
+          <li class="c-flex__item c-card">
+            <a href="/about.html" class="c-card__link">
+              <div class="c-card__inner">
+                <div class="c-card__bg c-card__bg--about tiltChange"></div>
+                <div class="c-card__txt">
+                  <p class="c-card__title">About</p>
+                  <p class="c-card__description">自己紹介</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="c-flex__item c-card js-tilt">
+            <a href="/work.html" class="c-card__link">
+              <div class="c-card__inner">
+                <div class="c-card__bg c-card__bg--work tiltChange"></div>
+                <div class="c-card__txt">
+                  <p class="c-card__title">Work</p>
+                  <p class="c-card__description">準備中</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="c-flex__item c-card">
+            <a href="/skill.html" class="c-card__link">
+              <div class="c-card__inner">
+                <div class="c-card__bg c-card__bg--skill tiltChange"></div>
+                <div class="c-card__txt">
+                  <p class="c-card__title">Skill</p>
+                  <p class="c-card__description">スキルセット</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="c-flex__item c-card">
+            <a href="/contact.html" class="c-card__link">
+              <div class="c-card__inner">
+                <div class="c-card__bg c-card__bg--contact tiltChange"></div>
+                <div class="c-card__txt">
+                  <p class="c-card__title">Contact</p>
+                  <p class="c-card__description">お問い合わせ</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
 </html>

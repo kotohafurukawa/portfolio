@@ -1,3 +1,4 @@
+import "@/scss/object/project/top.scss";
 import VanillaTilt from "vanilla-tilt";
 
 /**
@@ -8,7 +9,7 @@ function cardTiltAnimationInit() {
    * Tiltの対象となるDOM要素です。
    * @type {NodeList}
    */
-  const cardList = document.querySelectorAll(".c-card");
+  const cardList = document.querySelectorAll(".p-card");
   /**
    * @see https://github.com/micku7zu/vanilla-tilt.js
    */
@@ -29,7 +30,7 @@ function cardTiltAnimationInit() {
        * カードの背景画像のDOM要素です。
        * @type {NodeList}
        */
-      const cardBackGroundImage = document.querySelectorAll(".c-card__bg");
+      const cardBackGroundImage = document.querySelectorAll(".p-card__bg");
       /**
        * @see https://github.com/micku7zu/vanilla-tilt.js
        */

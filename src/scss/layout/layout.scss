@@ -1,10 +1,9 @@
 @use "/src/scss/global/" as *;
 
-.l-mainContent {
-  padding: 36px 20px;
-
+.l-mainContainer {
   & section {
     margin: 0 auto;
-    max-width: 1080px;
+    padding: 0 10px;
+    max-width: $content-max-width;
   }
 }

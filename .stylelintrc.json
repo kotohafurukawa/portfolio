@@ -4,9 +4,9 @@
   ],
   "rules": {
     "selector-class-pattern": [
-      "^([a-z])-([a-z][a-zA-Z0-9]*)+(__[a-z][a-zA-Z0-9]*(--[a-z][a-zA-Z0-9]*)?)?$",
+      "^([a-z])-([a-z][a-zA-Z0-9]*)+((__|--)[a-z][a-zA-Z0-9]*(--[a-z][a-zA-Z0-9]*)?)?$",
       {
-        "message": "クラス名は[a-z]-で始める必要があります。blockとelementの間は__で記述してください。elementとidentifyの間は--で記述してください。"
+        "message": "クラス名は[a-z]-で始める必要があります。「blockとelementの間は__」「elementとidentifyの間は--」「blockとidentifyの間は--」で記述してください。"
       }
     ]
   }

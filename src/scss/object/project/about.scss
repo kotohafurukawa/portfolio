@@ -1,1 +1,79 @@
 @use "/src/scss/global/" as *;
+
+.p-fullScreenContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  overflow: hidden;
+}
+
+.p-lead {
+  letter-spacing: 5px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+.p-scrollArrow {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+
+  &__icon,
+  &__icon::before,
+  &__icon::after {
+    position: absolute;
+    display: block;
+    content: "";
+    background-color: black;
+    border-radius: 2px;
+  }
+
+  &__icon {
+    height: 51px;
+    width: 5px;
+
+    @include animation(
+      $name: bounce-animation,
+      $timing-function: ease-in,
+      $iteration-count: infinite,
+      $direction: alternate
+    );
+  }
+
+  &__icon::before,
+  &__icon::after {
+    height: 5px;
+    bottom: 17%;
+    width: 30px;
+  }
+
+  &__icon::before {
+    right: -60%;
+    transform: rotate(45deg);
+  }
+
+  &__icon::after {
+    right: -445%;
+    transform: rotate(135deg);
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 10px;
+    font-weight: bold;
+  }
+}
+
+@keyframes bounce-animation {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

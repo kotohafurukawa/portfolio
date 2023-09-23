@@ -4,8 +4,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * gsapのアニメーション設定
+ * アニメーション設定
  * @type {object}
+ *  @type {{
+ *    from: アニメーションの開始状態,
+ *     to: アニメーションの終了状態
+ *   }}
  */
 const animationSetting = {
   from: {

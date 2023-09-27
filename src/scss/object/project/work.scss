@@ -1,1 +1,68 @@
 @use "/src/scss/global/" as *;
+
+$card-color: #5b5a57;
+
+// workページのみに適用されるスタイルです。
+.p-column {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: -30px;
+
+  // 1カラム
+  &__item {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  // 2カラム
+  @include mq(md) {
+    margin-left: -30px;
+    &__item {
+      margin-left: 30px;
+      width: calc((100% - 60px) / 2);
+    }
+  }
+}
+
+.p-card {
+  padding: 20px;
+  border: 1px solid $card-color;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px 0 $card-color;
+
+  &__inner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__title::after {
+    display: block;
+    content: "";
+    width: 50px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: $text-color;
+  }
+
+  &__thumb {
+    position: relative;
+    margin: 0;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &::before {
+      display: block;
+      content: "";
+      padding-top: 56.25%;
+    }
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

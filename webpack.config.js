@@ -7,7 +7,6 @@ module.exports = {
     top: "@/js/index.js",
     about: "@/about/js/index.js",
     work: "@/work/js/index.js",
-    skill: "@/skill/js/index.js",
     contact: "@/contact/js/index.js"
   },
   output: {
@@ -30,11 +29,6 @@ module.exports = {
       template: "./src/work/index.html",
       filename: "work.html",
       chunks: ["common", "work"]
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/skill/index.html",
-      filename: "skill.html",
-      chunks: ["common", "skill"]
     }),
     new HtmlWebpackPlugin({
       template: "./src/contact/index.html",

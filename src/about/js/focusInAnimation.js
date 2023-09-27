@@ -22,7 +22,7 @@ const animationSetting = {
   },
 };
 
-function focusInAnimation(selector = ".js-fadeInAnimation") {
+function focusInAnimation(selector = ".js-focusInAnimation") {
   const targetElements = document.querySelectorAll(selector);
 
   targetElements.forEach((element) => {

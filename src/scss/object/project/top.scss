@@ -4,42 +4,27 @@
 .p-flex {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
   margin: -32px 0 0;
   padding: 0;
   list-style: none;
 
   &__item {
-    margin-top: 32px;
+    margin: 32px 0 0;
   }
 
   // 2カラム
   @include mq(md) {
     flex-flow: row wrap;
-    justify-content: center;
-    margin-left: -32px;
 
     &__item {
-      margin-left: 32px;
+      width: calc(100% / 2);
     }
   }
 
-  @media screen and (width >= 824px) {
-    &::after {
-      display: block;
-      content: "";
-      width: 240px;
-      height: 320px;
-      margin-left: 32px;
-    }
-
-    &::before {
-      display: block;
-      content: "";
-      width: 240px;
-      height: 320px;
-      margin-left: 32px;
-      order: 1;
+  // 3カラム
+  @include mq(lg) {
+    &__item {
+      width: calc(100% / 3);
     }
   }
 }
@@ -69,6 +54,7 @@
       inset 0 0 0 9px #333,
       inset 0 0 0 10px rgba(253 253 253 / 60%);
     overflow: hidden;
+    margin: 0 auto;
   }
 
   &__bg {

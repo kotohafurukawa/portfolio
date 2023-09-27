@@ -1,5 +1,6 @@
 @use "/src/scss/global/" as *;
 
+// aboutページのみに適用されるスタイルです。
 .p-fullScreenContainer {
   height: 100vh;
   display: flex;
@@ -13,6 +14,33 @@
   letter-spacing: 5px;
   text-align: center;
   font-family: Helvetica, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.p-skillList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  text-align: left;
+
+  // 2カラム
+  &__item {
+    width: calc((100% - 40px) / 2);
+    margin-left: 20px;
+  }
+
+  // 3カラム
+  @include mq(sm) {
+    &__item {
+      width: calc((100% - 60px) / 3);
+    }
+  }
+
+  @include mq(lg) {
+    &__item {
+      width: calc((100% - 80px) / 4);
+    }
+  }
 }
 
 .p-scrollArrow {
